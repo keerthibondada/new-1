@@ -19,7 +19,13 @@
             border-radius: 50px;
             padding: 5px 10px;
             display: flex;
-          
+           
+        }
+        header{
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0px 500px;
         }
 /* Navigation List */
 .nav-list {
@@ -45,7 +51,7 @@
   display: flex;
   justify-content: space-between;
   padding: 12px 20px;
-  color: #ccc;
+  color: #f1eeee;
   text-decoration: none;
   cursor: pointer;
   transition: 0.3s;
@@ -56,18 +62,25 @@
   margin: 50px;
   position: relative;
   
-
-
 }
 
 /* Hide Checkbox */
 .toggle-input {
   display: none;
 }
+
+.menu-container {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;   /* 🔥 Push to left */
+  padding: 20px 30px;
+}
+
 .menu-icon {
   width: 45px;
   height: 40px;
-  background-color: #1a1a1a;
+  background-color: #070707;
   border-radius: 5px;
   display: flex;
   flex-direction: column;
@@ -94,16 +107,6 @@
 #main-toggle:checked + .menu-icon span:nth-child(3) {
   transform: rotate(-45deg) translate(5px, -5px);
 }
-.navbar-container {
-    display: flex;
-    align-items: center;
-    gap: 20px;
-    padding: 30px;
-}
-
-
-
-
 
           .search-btn img {
             width: 40px;
@@ -169,6 +172,7 @@
         </a>
 
         <!-- Mobile Toggle Button -->
+         <header class="header">
        <div class="menu-container">
   <input type="checkbox" id="main-toggle" class="toggle-input">
 
@@ -192,7 +196,9 @@
         <div class="search-btn d-none d-lg-block">
             <img src="images/search.png">
         </div>
+         </header>
      </div>
+    
     </div> 
 </nav>
 
