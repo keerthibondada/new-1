@@ -32,17 +32,7 @@
 }
 
 /* Header Box */
-.menu-header {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  background-color: #1a1a1a;
-  color: white;
-  padding: 15px 20px;
-  border-radius: 5px;
-  cursor: pointer;
-  font-weight: bold;
-}
+
 
 /* Navigation List */
 .nav-list {
@@ -94,6 +84,48 @@
   padding: 3px;
   transform: rotate(45deg); /* Down arrow */
 }
+.menu-container {
+  width: 280px;
+  margin: 50px;
+  position: relative;
+}
+
+/* Hide Checkbox */
+.toggle-input {
+  display: none;
+}
+.menu-icon {
+  width: 45px;
+  height: 40px;
+  background-color: #1a1a1a;
+  border-radius: 5px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  gap: 5px;
+}
+.menu-icon span {
+  width: 22px;
+  height: 2px;
+  background: white;
+  transition: 0.3s;
+}
+#main-toggle:checked + .menu-icon span:nth-child(1) {
+  transform: rotate(45deg) translate(5px, 5px);
+}
+
+#main-toggle:checked + .menu-icon span:nth-child(2) {
+  opacity: 0;
+}
+
+#main-toggle:checked + .menu-icon span:nth-child(3) {
+  transform: rotate(-45deg) translate(5px, -5px);
+}
+
+
+
 
 
           .search-btn img {
@@ -162,7 +194,13 @@
         <!-- Mobile Toggle Button -->
        <div class="menu-container">
   <input type="checkbox" id="main-toggle" class="toggle-input">
-  
+
+  <!-- Hamburger Icon Label -->
+  <label for="main-toggle" class="menu-icon">
+      <span></span>
+      <span></span>
+      <span></span>
+  </label>
             <ul class="nav-list">
                 <li><a  href="#">Products</a></li>
                 <li ><a href="#">About</a></li>
