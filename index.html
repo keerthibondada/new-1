@@ -21,8 +21,82 @@
             display: flex;
           
         }
+        .menu-container {
+  width: 280px;
+  margin: 50px;
+}
 
-        .search-btn img {
+/* Hide Checkboxes */
+.toggle-input {
+  display: none;
+}
+
+/* Header Box */
+.menu-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #1a1a1a;
+  color: white;
+  padding: 15px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+/* Navigation List */
+.nav-list {
+  list-style: none;
+  padding: 10px 0;
+  margin-top: 10px;
+  background-color: #1a1a1a;
+  border-radius: 5px;
+  display: none; /* Hidden by default */
+  position: relative;
+}
+
+/* Small triangle arrow on top of the main menu */
+.nav-list::before {
+  content: "";
+  position: absolute;
+  top: -10px;
+  right: 20px;
+  border-left: 10px solid transparent;
+  border-right: 10px solid transparent;
+  border-bottom: 10px solid #1a1a1a;
+}
+
+/* Show main menu when main checkbox is checked */
+#main-toggle:checked ~ .nav-list {
+  display: block;
+}
+
+/* List Items */
+.nav-list li {
+  padding: 0;
+}
+
+.nav-list a {
+  display: flex;
+  justify-content: space-between;
+  padding: 12px 20px;
+  color: #ccc;
+  text-decoration: none;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+/* Arrow Icons (Using CSS borders) */
+.arrow {
+  border: solid white;
+  border-width: 0 2px 2px 0;
+  display: inline-block;
+  padding: 3px;
+  transform: rotate(45deg); /* Down arrow */
+}
+
+
+          .search-btn img {
             width: 40px;
             height: 40px;
             border: 2px solid rgb(82, 79, 79);
@@ -86,19 +160,20 @@
         </a>
 
         <!-- Mobile Toggle Button -->
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
-            data-bs-target="#navbarNav">
-            <span class="navbar-toggler-icon"></span>
-        </button>
-     <div class ="d-flex align-items-center">
-        <div class="collapse navbar-collapse justify-content-center" id="navbarNav">
-            <ul class="navbar-nav custom-nav">
-                <li class="nav-item"><a class="nav-link text-dark" href="#">Products</a></li>
-                <li class="nav-item"><a class="nav-link text-dark" href="#">About</a></li>
-                <li class="nav-item"><a class="nav-link text-dark" href="#">Contact</a></li>
-                <li class="nav-item"><a class="nav-link text-dark" href="#">Download</a></li>
+       <div class="menu-container">
+  <input type="checkbox" id="main-toggle" class="toggle-input">
+  <label for="main-toggle" class="menu-header">
+    Drop down <span class="arrow"></span>
+  </label>
+            <ul class="nav-list">
+                <li><a  href="#">Products</a></li>
+                <li ><a href="#">About</a></li>
+                <li ><a  href="#">Contact</a></li>
+                <li ><a  href="#">Download</a></li>
             </ul>
+            </div>
         </div>
+        
 
         <div class="search-btn d-none d-lg-block">
             <img src="images/search.png">
