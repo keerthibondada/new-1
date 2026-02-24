@@ -21,12 +21,7 @@
             display: flex;
            
         }
-        header{
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 0px 300px;
-        }
+        
 /* Navigation List */
 .nav-list {
   list-style: none;
@@ -74,7 +69,10 @@
   display: flex;
   align-items: center;
   justify-content: flex-start;   /* 🔥 Push to left */
-  padding: 20px 30px;
+  position: relative;
+  margin: 0;
+  padding: 0;
+
 }
 
 .menu-icon {
@@ -166,39 +164,37 @@
 
 <!-- ================= HEADER ================= -->
 <nav class="navbar navbar-expand-lg bg-white py-3">
- <div class="container">
+<div class="container d-flex align-items-center justify-content-between">
         <a class="navbar-brand" href="#">
             <img src="images/logo.svg" width="300">
         </a>
 
         <!-- Mobile Toggle Button -->
-         <header class="header">
-       <div class="menu-container">
-  <input type="checkbox" id="main-toggle" class="toggle-input">
+         <div class="d-flex align-items-center gap-3">
 
-  <!-- Hamburger Icon Label -->
+    <div class="menu-container m-0 p-0">
+        <input type="checkbox" id="main-toggle" class="toggle-input">
 
-  <label for="main-toggle" class="menu-icon">
-      <span></span>
-      <span></span>
-      <span></span>
-  </label>
-            <ul class="nav-list">
-                <li><a  href="#">Products</a></li>
-                <li ><a href="#">About</a></li>
-                <li ><a  href="#">Contact</a></li>
-                <li ><a  href="#">Download</a></li>
-            </ul>
-            
-        </div>
-        
+        <label for="main-toggle" class="menu-icon">
+            <span></span>
+            <span></span>
+            <span></span>
+        </label>
 
-        <div class="search-btn d-none d-lg-block">
-            <img src="images/search.png">
-        </div>
-         </header>
-     </div>
-    
+        <ul class="nav-list">
+            <li><a href="#">Products</a></li>
+            <li><a href="#">About</a></li>
+            <li><a href="#">Contact</a></li>
+            <li><a href="#">Download</a></li>
+        </ul>
+    </div>
+
+    <div class="search-btn">
+        <img src="images/search.png">
+    </div>
+
+</div>
+      
     </div> 
 </nav>
 
