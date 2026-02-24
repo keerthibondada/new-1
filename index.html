@@ -53,9 +53,9 @@
 }
 
 .menu-container {
+  width: 280px;
+  margin: 50px;
   position: relative;
-  margin: 0;
-  padding: 0;
   
 }
 
@@ -68,10 +68,8 @@
   position: relative;
   display: flex;
   align-items: center;
-  justify-content: space-between;
-  margin: 0px;
-  padding:500px;
-
+  justify-content: flex-start;   /* 🔥 Push to left */
+  padding: 20px 30px;
 }
 
 .menu-icon {
@@ -163,36 +161,39 @@
 
 <!-- ================= HEADER ================= -->
 <nav class="navbar navbar-expand-lg bg-white py-3">
-<div class="container d-flex align-items-center justify-content-between">
+ <div class="container">
         <a class="navbar-brand" href="#">
             <img src="images/logo.svg" width="300">
         </a>
 
         <!-- Mobile Toggle Button -->
-         <div class="d-flex align-items-center gap-10">
+         
+       <div class="menu-container">
+  <input type="checkbox" id="main-toggle" class="toggle-input">
 
-    <div class="menu-container m-0 p-0">
-        <input type="checkbox" id="main-toggle" class="toggle-input">
+  <!-- Hamburger Icon Label -->
 
-        <label for="main-toggle" class="menu-icon">
-            <span></span>
-            <span></span>
-            <span></span>
-        </label>
+  <label for="main-toggle" class="menu-icon">
+      <span></span>
+      <span></span>
+      <span></span>
+  </label>
+            <ul class="nav-list">
+                <li><a  href="#">Products</a></li>
+                <li ><a href="#">About</a></li>
+                <li ><a  href="#">Contact</a></li>
+                <li ><a  href="#">Download</a></li>
+            </ul>
+            
+        </div>
+        
 
-        <ul class="nav-list">
-            <li><a href="#">Products</a></li>
-            <li><a href="#">About</a></li>
-            <li><a href="#">Contact</a></li>
-            <li><a href="#">Download</a></li>
-        </ul>
-    </div>
-    <div class="search-btn">
-        <img src="images/search.png">
-    </div>
-
-</div>
-      
+        <div class="search-btn d-none d-lg-block">
+            <img src="images/search.png">
+        </div>
+         
+     </div>
+    
     </div> 
 </nav>
 
