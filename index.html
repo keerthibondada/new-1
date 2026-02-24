@@ -13,94 +13,77 @@
             background-color: #fdfcfc;
         }
 
-        /* Custom Navbar */
-        .custom-nav {
-            border: 2px solid rgb(85, 83, 83);
-            border-radius: 50px;
-            padding: 5px 10px;
-            display: flex;
-           
-        }
-        
-/* Navigation List */
-.nav-list {
-  list-style: none;
-  padding: 10px 0;
-  margin-top: 10px;
-  background-color: #1a1a1a;
-  border-radius: 5px;
-  display: none; /* Hidden by default */
-  position: relative;
-}
-/* Show main menu when main checkbox is checked */
-#main-toggle:checked ~ .nav-list {
-  display: block;
-}
-
-/* List Items */
-.nav-list li {
-  padding: 0px;
-}
-
-.nav-list a {
-  display: flex;
-  justify-content: space-between;
-  padding: 12px 20px;
-  color: #f1eeee;
-  text-decoration: none;
-  cursor: pointer;
-  transition: 0.3s;
-}
-
+     /* Container for the menu */
 .menu-container {
-  width: 280px;
-  margin: 50px;
-  position: relative;
-  
+    position: relative;
+    margin-left: auto; /* This pushes the menu to the far right */
 }
 
 /* Hide Checkbox */
 .toggle-input {
-  display: none;
+    display: none;
 }
 
-.menu-container {
-  position: relative;
-  display: flex;
-  align-items: center;
-  justify-content: flex-start;   /* 🔥 Push to left */
-  padding: 20px 30px;
-}
-
+/* Circular Hamburger Icon */
 .menu-icon {
-  width: 45px;
-  height: 40px;
-  background-color: #070707;
-  border-radius: 5px;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  cursor: pointer;
-  gap: 5px;
-  
+    width: 50px;
+    height: 50px;
+    background-color: transparent;
+    border: 1px solid #e0e0e0; /* Light grey circle border */
+    border-radius: 50%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    gap: 4px;
+    transition: 0.3s;
 }
+
 .menu-icon span {
-  width: 22px;
-  height: 2px;
-  background: white;
-  transition: 0.3s;
+    width: 20px;
+    height: 2px;
+    background: #000; /* Black bars */
+    transition: 0.3s;
 }
+
+/* Dropdown Menu Positioning */
+.nav-list {
+    list-style: none;
+    padding: 10px 0;
+    margin: 0;
+    background-color: #1a1a1a;
+    border-radius: 12px;
+    display: none; 
+    position: absolute;
+    top: 60px; /* Position below the circle */
+    right: 0;   /* Align to right edge */
+    width: 200px;
+    z-index: 1000;
+}
+
+.nav-list a {
+    display: block;
+    padding: 12px 20px;
+    color: #fff;
+    text-decoration: none;
+    transition: 0.3s;
+}
+
+/* Show menu when checked */
+#main-toggle:checked ~ .nav-list {
+    display: block;
+}
+
+/* Animation for the "X" when clicked */
 #main-toggle:checked + .menu-icon span:nth-child(1) {
-  transform: rotate(45deg) translate(5px, 5px);
+    transform: rotate(45deg) translate(4px, 4px);
 }
-
 #main-toggle:checked + .menu-icon span:nth-child(2) {
-  opacity: 0;
+    opacity: 0;
 }
-
 #main-toggle:checked + .menu-icon span:nth-child(3) {
-  transform: rotate(-45deg) translate(5px, -5px);
+    transform: rotate(-45deg) translate(4px, -4px);
 }
 
           .search-btn img {
@@ -161,43 +144,35 @@
 
 <!-- ================= HEADER ================= -->
 <nav class="navbar navbar-expand-lg bg-white py-3">
- <div class="container">
+    <div class="container d-flex align-items-center justify-content-between">
+        
         <a class="navbar-brand" href="#">
-            <img src="images/logo.svg" width="300">
+            <img src="images/logo.svg" style="width: clamp(150px, 40vw, 300px);">
         </a>
 
-        <!-- Mobile Toggle Button -->
-         
-       <div class="menu-container">
-  <input type="checkbox" id="main-toggle" class="toggle-input">
-
-  <!-- Hamburger Icon Label -->
-
-  <label for="main-toggle" class="menu-icon">
-      <span></span>
-      <span></span>
-      <span></span>
-  </label>
-            <ul class="nav-list">
-                <li><a  href="#">Products</a></li>
-                <li ><a href="#">About</a></li>
-                <li ><a  href="#">Contact</a></li>
-                <li ><a  href="#">Download</a></li>
-            </ul>
+        <div class="menu-container">
+            <input type="checkbox" id="main-toggle" class="toggle-input">
             
+            <label for="main-toggle" class="menu-icon">
+                <span></span>
+                <span></span>
+                <span></span>
+            </label>
+
+            <ul class="nav-list">
+                <li><a href="#">Products</a></li>
+                <li><a href="#">About</a></li>
+                <li><a href="#">Contact</a></li>
+                <li><a href="#">Download</a></li>
+            </ul>
+        </div>
+
+        <div class="search-btn d-none d-lg-block ms-3">
+            <img src="images/search.png" style="width:40px; height:40px;">
         </div>
         
-
-        <div class="search-btn d-none d-lg-block">
-            <img src="images/search.png">
-        </div>
-         
-     </div>
-    
-    </div> 
+    </div>
 </nav>
-
-
 <!-- ================= BLOG HEADER ================= -->
 <section class="blogs-section text-center">
     <div class="container">
